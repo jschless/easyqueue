@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Waiting Room</title>
+</head>
+<body>
+    <ol id="navigation">
+    {% for item in queue %}
+        <li>{{item}}</li>
+    {% endfor %}
+    </ol>
+  
+    <h1>Add a Person</h1>
+    <form method="POST" action="/add">
+        <label for="name">Name:</label>
+        <input type="text" name="name" required><br>
+        <label for="reason">Reason:</label>
+        <input name="reason" required><br>
+        <input type="submit" value="Add Person">
+    </form>
+    <br>
+
+    
+    <a href="/next">See Next Person</a>
+</body>
+</html>
